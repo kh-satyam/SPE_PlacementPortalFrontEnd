@@ -17,8 +17,8 @@ function func()
 		url : "http://localhost:8086/student/login",
 		dataType : "text", // data type of response
 		data : data,
-		success : function(){
-		
+		success : function(response){
+			console.log(response);
 			swal({
 				  title: "Success",
 				  text: "Login successful!",
@@ -27,6 +27,12 @@ function func()
 				
 		},
 		error : function(err){
+			console.log(err);
+			swal({
+				  title: "Failure",
+				  text: "Login unsuccessful!",
+				  icon: "failure"
+				})
 		}
 	});
 	
