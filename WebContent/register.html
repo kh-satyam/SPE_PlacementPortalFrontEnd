@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <title> Placement Portal</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -134,41 +135,16 @@ input[type=submit] {
               </div>
               <div class="modal-body">
                <div class="formcontainer">
-                <form id="f1" enctype="multipart/form-data" class="form-group" name="form1" action="" method="post">
-                    <label for="firstName"> First Name </label>
-                    <input type="text" autocomplete="off" placeholder="Enter First Name" class="form-control" name="firstName" required>
-                    <p class='msg text-danger' id="firstname-msg">Please Enter First Name.</p>     
-                    <br>
-                    <label for="lastName"> Last Name </label>
-                    <input type="text" autocomplete="off" placeholder="Enter Last Name" class="form-control" name="lastName" required>
-                    <p class='msg text-danger' id="lastname-msg">Please Enter Last Name.</p>     
-                    <br>   
+                <form id="f1" class="form-group" name="form1" action="" method="post">
                     <label for="rollNumber"> Roll Number </label>
                     <input type="text" autocomplete="off" placeholder="Enter Roll number" class="form-control" name="rollNumber" required>
                     <p class='msg text-danger' id="rollNumber-msg">Please Enter a valid roll number.</p>
-                    <br>
-                    <label for="dob"> Date of Birth </label>
-                    <input type="date" autocomplete="off" placeholder="Date of Birth" class="form-control" name="dob" required>
-                    <p class='msg text-danger' id="dob-msg">You must be more than 3 year old.</p>
-                    <p class='msg text-danger' id="dob-old-msg">This can't be true.</p>        
-                    <br>
-                    <label for="personalEmail"> Personal Email </label>
-                    <input type="text" data-validation="number" data-validation-allowing="range[0;100]" autocomplete="off" placeholder="Personal Email" class="form-control" name="personalEmail" required>
-                    <p class='msg text-danger' id="personalEmail-msg">Enter valid email address</p>
                     <br>
                     <label for="officialEmail"> Official Email </label>
                     <input type="text" data-validation="number" data-validation-allowing="range[0;100]" autocomplete="off" placeholder="Official Email" class="form-control" name="officialEmail" required>
                     <p class='msg text-danger' id="officialEmail-msg">Enter valid email address</p>
                     <br>
-                    <label for="courseType"> Course Type </label>
-                    <input type="text" data-validation="number" data-validation-allowing="range[0;100]" autocomplete="off" placeholder="Course Type" class="form-control" name="courseType" required>
-                    <p class='msg text-danger' id="courseType-msg">Enter valid course type</p>
-                    <br>
-					<label for="batch"> Batch </label>
-                    <input type="text" data-validation="number" data-validation-allowing="range[1999;2020]" autocomplete="off" placeholder="batch" class="form-control" name="batch" required>
-                    <p class='msg text-danger' id="batch-msg">Enter valid batch</p>
-                    <br>
-					<label for="password"> Password </label>
+                    <label for="password"> Password </label>
                     <input type="password" id="password" autocomplete="off" placeholder="Password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name="password" required>
                     <p class='msg text-danger' id="password-msg" >Invalid Password</p>
 				                    
@@ -240,13 +216,7 @@ input[type=submit] {
 				}
 				</script>
 				
-                </form><!-- 
-                <form id="f2" enctype="multipart/form-data" class="form-group" name="form2" method="POST">
-                    <label for="image"> Upload Image </label>
-                    <input type="file" placeholder="image" class="form-control" name="image" required>
-                    <label for="resume"> Upload Resume </label>
-                    <input type="file" placeholder="resume" class="form-control" name="resume" required>
-                </form> -->
+                </form>
 
             </div>
 				<p class='msg text-success' id="success-msg">Successful.</p>

@@ -14,15 +14,14 @@ function func()
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : "http://localhost:8080/student/login",
-		dataType : "json", // data type of response
+		url : "http://localhost:8086/student/login",
+		dataType : "text", // data type of response
 		data : data,
 		success : function(){
-			//console.log(result);
 		
 			swal({
 				  title: "Success",
-				  text: "Seller successfully registered!",
+				  text: "Login successful!",
 				  icon: "success"
 				})
 				
@@ -41,32 +40,5 @@ function func()
 	
 	
 	
-	
-/*	var url="http://localhost:8080/student/login/"+ a + "/"+b;  
-	if(window.XMLHttpRequest){  
-		request=new XMLHttpRequest();  
-	}  
-	else if(window.ActiveXObject){  
-		request=new ActiveXObject("Microsoft.XMLHTTP");  
-	}  
-	try {  
-		request.onreadystatechange=getInfo;  
-		request.open("GET",url,true);  
-		request.send();  
-	}  
-	catch(e) {  
-		alert("Unable to connect to server");  
-	}  
-}  
-  
-function getInfo(){  
-	if(request.readyState==4){  
-		var val=request.responseText;  
-		console.log(val);
-		if(val=="success") {
-			location.replace("index2.html");
-		}
-		document.getElementById('amit').innerHTML=val;  
-	} 
-} */
+
 }
