@@ -1,0 +1,105 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title> Student Portal Dashboard</title>
+        <link rel="stylesheet" href="css/comment.css">			
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery-3.3.1.min.js"></script>
+   		<script src="js/popper.min.js"></script> 
+        <script src="js/bootstrap.min.js"></script>
+		<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=y73ln71fa0dklevpdopreklqqfstso2kte48aoeuyo3la331"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+		<script>
+		  tinymce.init({
+		    selector: '#mytextarea',
+		   	height : 600,
+		    width : 700
+		  });
+        </script>
+		<script src="js/addExp.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var globalRoll = localStorage.getItem("roll");
+                if (globalRoll == null) { 
+                    window.location = 'http://localhost:8081/PlacementPortalFrontEnd/login.html';
+                }
+                
+
+            });
+        </script>
+	<style>
+		h2{
+			color : white;
+		}
+		label{
+			color : white; 
+		}
+	</style>
+    </head>
+    <body>
+
+        <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3> Placement Portal</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="addExp.html">   <span class="tab">  <i class="far fa-edit"></i>  </span> Add Interview Experience </a>
+                </li>        
+                <li>
+                    <a href="viewExp.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> View Interview Experiences  </a>
+                </li>
+                <li>
+                    <a href="editProfile.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Edit Profile  </a>
+                </li>
+                <li>
+                    <a href="addCV.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Update CV  </a>
+                </li>
+                <li>
+                    <a href="logout.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Logout  </a>
+                </li>
+            </ul>
+        </nav>
+		
+		<div id="content">
+			<h2>Add Interview Experience</h2>
+			<br/><br/>
+            <form method="post" onsubmit="return func()">
+               	<label>Company Name</label>
+               	<span id="companyNames"></span><br/>
+               	<span id="otherCompany"></span> 
+                <br/>
+               	<label>Offer Type</label><br/>
+                	<select id="type" class="form-control" name="type" required>
+				    	<option value="" disabled selected>Select your option</option>
+						<option value="2 months internship">2 months internship</option>
+						<option value="6 months internship">6 months internship</option>
+						<option value="Full Time Offer">Full Time Offer</option>
+					</select>
+	            <br/>
+               	<label>Date</label>
+                <input type="date" id="date" autocomplete="off" placeholder="Date" class="form-control" name="date" required>
+                <br/>
+               	<label>Title</label>
+                <input type="text" id="title" autocomplete="off" placeholder="Title" class="form-control" name="title" required>
+                <br/>
+				<textarea id="mytextarea">Hello, World!</textarea>
+				<input type="submit"  value="Submit form">
+			</form>			
+			<br/><br/>		
+		
+		</div>
+
+    </div>	
+	</body>
+</html>

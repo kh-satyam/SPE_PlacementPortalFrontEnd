@@ -23,8 +23,10 @@ function func()
 				  title: "Success",
 				  text: "Login successful!",
 				  icon: "success"
-				})
-				
+				}, function() {
+		            window.location = "http://localhost:8081/PlacementPortalFrontEnd/dashboard.html";
+		        });
+		   				
 		},
 		error : function(err){
 			console.log(err);

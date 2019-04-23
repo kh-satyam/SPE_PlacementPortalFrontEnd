@@ -1,0 +1,81 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title> Student Portal Dashboard</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery-3.3.1.min.js"></script>
+   		<script src="js/popper.min.js"></script> 
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var globalRoll = localStorage.getItem("roll");
+                if (globalRoll == null) { 
+                    window.location = 'http://localhost:8081/PlacementPortalFrontEnd/login.html';
+                }
+            });
+        </script>
+	<style>
+	#dropdown {
+				color: #fff;
+    			float: right;
+    		  }
+   	.hoverBut {
+   				color: red;
+   				background-color: #1F8CA2;
+   			  }	
+	</style>
+    </head>
+    <body>
+
+        <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3> Placement Portal</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="addExp.html">   <span class="tab">  <i class="far fa-edit"></i>  </span> Add Interview Experience </a>
+                </li>        
+                <li>
+                    <a href="viewExp.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> View Interview Experiences  </a>
+                </li>
+                <li>
+                    <a href="editProfile.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Edit Profile  </a>
+                </li>
+                <li>
+                    <a href="addCV.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Update CV  </a>
+                </li>
+                <li>
+                    <a href="logout.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Logout  </a>
+                </li>
+            </ul>
+        </nav>
+<!-- 
+		  <div class = "pull-right ">
+		    <button class="btn btn-primary dropdown-toggle hoverBut" type="button" data-toggle="dropdown">Options
+		    
+		    <span class="caret"></span></button>
+		    <ul class="dropdown-menu">
+		      <li><a href="editProfile.html">Edit Profile</a></li>
+		      <li><a href="logout.html">Logout</a></li>
+		    </ul>
+		  </div>
+-->
+        </div>
+		
+		
+
+		
+    </body>
+
+    </html>

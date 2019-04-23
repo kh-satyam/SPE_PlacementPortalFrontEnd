@@ -34,10 +34,47 @@ $(document).ready(function() {
 		arr=JSON.stringify(arr)
 		console.log(arr);
 	
+		var flag = 0;
+		//getting all existing students
+		$.ajax(
+				{
+					type : 'GET',
+					contentType : 'application/json',
+					async : false,
+					url : "http://localhost:8086/student",
+					dataType : "json", // data type of response
+					success : function(result){
+//						console.log(result);
+							for (i in result)
+							{
+							//	console.log(result[i]);
+							//	console.log(result[i]["batch"]);
+								var a = document.getElementById("rollNumber").value;
+								var b = document.getElementById("officialEmail").value;
+								console.log("a : " + a);
+								console.log("b : " + b);
+								
+								if(result[i]["rollNumber"] == a || result[i]["officialEmail"] == b)
+								{
+									swal("Student is already registered");
+									flag=1;break;
+								}
+								if(flag==1)return;
+							}
+						},
+				    	error:function(data) {
+				    	}
+				});
+		console.log("flag : " + flag);
+		if(flag == 1)return;
+		else
+		{
+		
 		$.ajax({
 			type : 'POST',
 			contentType : 'application/json',
 			url : "http://localhost:8086/student/register",
+			async : false,
 			dataType : "text", // data type of response
 			data : arr,
 			success : function(result){
@@ -46,12 +83,15 @@ $(document).ready(function() {
 					  title: "Success",
 					  text: "Seller successfully registered!",
 					  icon: "success"
-					})
+					}, function() {
+			            window.location = "http://localhost:8081/PlacementPortalFrontEnd/login.html";
+			        });
 					
 			},
 			error : function(err){
 			}
 		});
+		}
 		
 		
 		

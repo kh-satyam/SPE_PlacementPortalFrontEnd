@@ -1,0 +1,83 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title> Student Portal Dashboard</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery-3.3.1.min.js"></script>
+   		<script src="js/popper.min.js"></script> 
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/addCV.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var globalRoll = localStorage.getItem("roll");
+                if (globalRoll == null) { 
+                    window.location = 'http://localhost:8081/PlacementPortalFrontEnd/login.html';
+                }
+            });
+        </script>
+	<style>
+		h2{
+		color:white;
+		}
+	</style>
+    </head>
+    <body>
+
+        <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3> Placement Portal</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="addExp.html">   <span class="tab">  <i class="far fa-edit"></i>  </span> Add Interview Experience </a>
+                </li>        
+                <li>
+                    <a href="viewExp.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> View Interview Experiences  </a>
+                </li>
+                <li>
+                    <a href="editProfile.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Edit Profile  </a>
+                </li>
+                <li>
+                    <a href="addCV.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Update CV  </a>
+                </li>
+                <li>
+                    <a href="logout.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> Logout  </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div id="content">
+        	<h2>Update CV</h2>
+	        <div class="myForum">        	
+
+
+   				<form id="f2" enctype="multipart/form-data" name="form2" method="POST">
+                    <input type="file" placeholder="CV" name="file" required>
+   				</form>				
+				<br/><br/>
+				<input type="submit"  id="done" value="Update CV"/>
+	 									
+				
+
+
+
+			</div>
+        </div>
+		
+		
+
+		
+	</body>
+</html>

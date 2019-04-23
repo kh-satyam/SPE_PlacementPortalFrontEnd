@@ -24,7 +24,7 @@
     <!-- jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Popper.JS -->
-    <!-- <script src="js/popper.min.js"></script> -->
+    <script src="js/popper.min.js"></script> 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -32,6 +32,18 @@
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
+                var isHidden = $( "#sidebar" ).is( ":hidden" );
+                var isVisible = $( "#sidebar" ).is( ":visible" );
+                console.log("hidden" + isHidden);
+                console.log("visible" + isVisible);
+    			if(isHidden)
+    			{
+    				$("toButon").html("&#8594;");
+    			}
+    			else
+    			{
+    				$("toButon").html("&#8598;");				
+    			}
             });
             $('.msg').hide();
         });
@@ -65,7 +77,7 @@
 
                     <button type="button" id="sidebarCollapse" class="btn btn-basic">
                         <i class="fas fa-align-left"></i>
-                        <span> Menu </span>
+                        <span id = "toButon"> &#8656; </span>
                     </button>
                    
                 </div>
