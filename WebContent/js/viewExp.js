@@ -17,7 +17,7 @@ $(document).ready(function () {
 							for (j in result)
 						{
 							//	data+="<tr><td>"+result[j]["company"].name+"</td><td>"+result[j]["type"]+"</td><td>"+result[j]["date"]+"</td><td>"+result[j]["body"]+"</td></tr>";
-							
+							var dat = func(result[j]["body"]);
 							data += "<tr><td>"+			
 									'<div class="card" style="width: 50rem;">'+
 									'<div class="card-header">'+
@@ -27,9 +27,10 @@ $(document).ready(function () {
 								    '<ul class="list-group list-group-flush">'+
 								    '<li class="list-group-item">'+
 							        '<h5 align="center" class="card-title">'+result[j]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[j]["type"]+'&nbsp&nbsp&nbsp&nbsp'+result[j]["date"]+'</h5>'
-								   +'</li><li  id="less" class="list-group-item">'+result[j]["body"]+
-								    '</li></ul></div>'+
-								    '<a  id="more" href="https://www.google.com">Read More</a>'+
+								   +'</li><li  id="less" class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
+								   '<a id="more"  style="color:red	;" href="http://localhost:8085/experience?id='+result[j]["id"]+'"><b>Read More</b></a>'+
+								   '</li></ul></div>'+
+								   
 								    '</div></div></td></tr>';
 								
 								/*
@@ -58,3 +59,14 @@ $(document).ready(function () {
 			});
 
 });
+
+function func(str)
+{
+	//console.log(str);
+	var temp = "";
+	for(i=0;i<50;i++)
+	{
+		temp += str[i];
+	}
+	return temp;
+}

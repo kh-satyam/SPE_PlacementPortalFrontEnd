@@ -31,14 +31,15 @@
             $(document).ready(function () {
                 var globalRoll = localStorage.getItem("roll");
                 if (globalRoll == null) { 
-                    window.location = 'http://localhost:8081/PlacementPortalFrontEnd/login.html';
+                    window.location = 'http://localhost:8085/PlacementPortalFrontEnd/login.html';
                 }
 
                 $(document).click(function() {
                     $('#less').css({
                         'height': '50px'
                     })
-                })            	$('#dtBasicExample').DataTable();
+                })            
+                $('#dtBasicExample').DataTable();
           	  $('.dataTables_length').addClass('bs-select');
 
             });
