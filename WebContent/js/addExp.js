@@ -24,8 +24,6 @@ $(document).ready(function () {
 				    	error:function(data) {
 				    	}
 				});
-		
-		
 
 		str+='<option value="Other">Other</option></select>';
 
