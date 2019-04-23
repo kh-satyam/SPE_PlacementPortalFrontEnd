@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	funky();
+	$("#cv").change(function(file){
+		var fileName=document.getElementById("cv").name;
+		//console.log("filename:"+fileName);
+	});
 });
 
 function funky()
@@ -13,7 +17,7 @@ function updateCV()
 	var y = document.forms.namedItem("form2");
 	var form = new FormData(y);
 	form.append("formData",localStorage.getItem("roll"));
-	
+
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "http://localhost:8086/student/updateCv");
 	xhr.send(form);

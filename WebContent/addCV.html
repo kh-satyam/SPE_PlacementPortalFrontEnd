@@ -13,13 +13,13 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/jquery-3.3.1.min.js"></script>
-   		<script src="js/popper.min.js"></script> 
+   		<script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 		<script src="js/addCV.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 var globalRoll = localStorage.getItem("roll");
-                if (globalRoll == null) { 
+                if (globalRoll == null) {
                     window.location = 'http://localhost:8085/PlacementPortalFrontEnd/login.html';
                 }
             });
@@ -42,7 +42,7 @@
             <ul class="list-unstyled components">
                 <li>
                     <a href="addExp.html">   <span class="tab">  <i class="far fa-edit"></i>  </span> Add Interview Experience </a>
-                </li>        
+                </li>
                 <li>
                     <a href="viewExp.html">   <span class="tab"> <i class="fas fa-eye"></i> </span> View Interview Experiences  </a>
                 </li>
@@ -57,27 +57,27 @@
                 </li>
             </ul>
         </nav>
-        
+
         <div id="content">
         	<h2>Update CV</h2>
-	        <div class="myForum">        	
+	        <div class="myForum">
 
 
    				<form id="f2" enctype="multipart/form-data" name="form2" method="POST">
-                    <input type="file" placeholder="CV" name="file" required>
-   				</form>				
+                    <input style="color:white" type="file" placeholder="CV" name="file" id="cv" required>
+   				</form>
 				<br/><br/>
 				<input type="submit"  id="done" value="Update CV"/>
-	 									
-				
+
+
 
 
 
 			</div>
         </div>
-		
-		
 
-		
+
+
+
 	</body>
 </html>
