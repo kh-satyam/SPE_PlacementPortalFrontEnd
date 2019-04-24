@@ -17,17 +17,18 @@ $(document).ready(function () {
 					data += ""+			
 					'<div class="card" style="width: 50rem;">'+
 					'<div class="card-header">'+
-					result["title"]+
+					result["date"]+
 					'</div>'+
 					'<div class="card-body">'+
 				    '<ul class="list-group list-group-flush">'+
 				    '<li class="list-group-item">'+
-			        '<h5 align="center" class="card-title">'+result["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result["type"]+'&nbsp&nbsp&nbsp&nbsp'+result["date"]+'</h5>'
-				   +'</li><li  id="less" class="list-group-item">'+result["body"]+
-				   
-				   '</li></ul></div>'+
-				   
-				    '</div></div>';
+			        '<h5 align="center" class="card-title">'+result["title"]+'</h5>'+
+				    '</li>'+
+			        '<li class="list-group-item">'+
+			        '<h5 align="center" class="card-title">'+result["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result["type"]+'</h5>'+
+				    '</li>'+
+				    '<li class="list-group-item">'+result["body"]+
+				    '</li></ul></div></div></div>';
 	
 					
 				    document.getElementById("exp").innerHTML=data;

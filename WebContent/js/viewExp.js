@@ -34,9 +34,9 @@ $(document).ready(function () {
 							        '<h5 align="center" class="card-title">'+result[j]["title"]+'</h5>'+
 								    '</li>'+
 							        '<li class="list-group-item">'+
-							        '<h5 align="center" class="card-title">'+result[j]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[j]["type"]+'&nbsp&nbsp&nbsp&nbsp'+result[j]["date"]+'</h5>'+
+							        '<h5 align="center" class="card-title">'+result[j]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[j]["type"]+'</h5>'+
 								    '</li>'+
-								    '<li  id="less" class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
+								    '<li class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
 								    '<a id="more"  style="color:red	;" href="http://localhost:8085/PlacementPortalFrontEnd/experience.html?id='+result[j]["id"]+'"><b>Read More</b></a>'+
 								    '</li></ul></div></div></div></td></tr>';
 								
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
 function populateCompanyFilter()
 {
-	var str = '<div id="white">Filter By Company :</div> <select id="companyFilterOption" name="companyFilter" onclick="companyFilterFunc;" required>';
+	var str = '<div id="white">Filter By Company :</div> <select id="companyFilterOption" name="companyFilter"  required>';
 	str+= '<option value="" disabled selected>Select your option</option>';
 
 	$.ajax(
@@ -107,20 +107,46 @@ function func(str)
 	}
 	return temp;
 }
-/*
-function getter(prop,order)
+
+function submitFilters()
 {
-	console.log("getter " + prop + " " + order);
-	$.ajax(
-			{
-				type : 'GET',
-				contentType : 'application/json',
-				async : false,
-				url : "http://localhost:8086/experience/",
-				dataType : "json", // data type of response
-				success : function(result)
-					{
-						console.log(result);
+	var company = document.getElementById("companyFilterOption").value;
+	var year = document.getElementById("yearFilterOption").value;
+	var offer = document.getElementById("offerFilterOption").value;
+	if(company=="")company=null;
+	if(year=="")year=null;
+	if(offer=="")offer=null;
+	console.log(company + " " + year + " " + offer + " " + "helo");
+	var itemUpload = JSON.stringify({
+		"company" : company,
+		"year" : year,
+		"type" : offer
+	});
+	var maal = null;
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		data : itemUpload,
+		async : false,
+		dataType : "json",
+		url : "http://localhost:8086/experience/getExperiencesByFilters",
+		success : function(data) {
+			console.log("success");
+			console.log(data);
+			maal = data;
+		},
+		failure : function(err)
+		{
+			console.log("failure");
+			console.log(err);
+		}
+		});
+	getter(maal);
+}
+
+
+function getter(result)
+{
 						var data2 = "";
 
 						data2 += '<table id="dtBasicExample" class="table table-striped table-bordered table-sm" width="100%">';
@@ -128,29 +154,19 @@ function getter(prop,order)
 						data2 += '<tbody>';
 
 						
-						if(order == "ascending")
-						{
-							result.sort(GetSortOrderAscending(prop));
-						}
-						else
-						{
-							result.sort(GetSortOrderDescending(prop));
-						}
 						for (k in result)
 						{
-							//console.log("raja");
-							//console.log(result[k]);
 							var dat = func(result[k]["body"]);
 							console.log(result[k]["company"].name);
 							data2 += "<tr><td>"+			
 									'<div class="card" style="width: 50rem;">'+
 									'<div class="card-header">'+
-									result[k]["title"]+
+									result[k]["date"]+
 									'</div>'+
 									'<div class="card-body">'+
 								    '<ul class="list-group list-group-flush">'+
 								    '<li class="list-group-item">'+
-							        '<h5 align="center" class="card-title">'+result[k]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[k]["type"]+'&nbsp&nbsp&nbsp&nbsp'+result[k]["date"]+'</h5>'
+							        '<h5 align="center" class="card-title">'+result[k]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[k]["type"]+'</h5>'
 								   +'</li><li  id="less" class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
 								   '<a id="more"  style="color:red	;" href="http://localhost:8085/PlacementPortalFrontEnd/experience.html?id='+result[k]["id"]+'"><b>Read More</b></a>'+
 								   '</li></ul></div>'+
@@ -161,24 +177,15 @@ function getter(prop,order)
 							data2+="</tbody></table>";
 							console.log("data2");
 							console.log(data2);
-//							$('#experience').append(data);	
-			
-//							$('#albert').append(data);
+							$('#experience').html("");	
+							
 						$('#experience').append(data2);	
 						table12.destroy();
 						$('#dtBasicExample').clear().draw();
 						$('#dtBasicExample').DataTable();
-						
-			          	  $('.dataTables_length').addClass('bs-select');
-
-					},
-			    	error:function(data) {
-			    		console.log("error");
-			    		console.log(data);
-			    	}
-			});
+			          	$('.dataTables_length').addClass('bs-select');
 }
-*/
+
 /*
 function GetSortOrderAscending(prop) { 
 	console.log(prop);
