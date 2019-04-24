@@ -4,7 +4,6 @@ function func()
 {
 	var a = document.getElementById("rollno").value;
 	var b = document.getElementById("pass").value;
-	localStorage.setItem("roll", a);
 	var data = {
 		  "rollNumber":a,
 		  "password":b
@@ -18,6 +17,7 @@ function func()
 		dataType : "text", // data type of response
 		data : data,
 		success : function(response){
+			localStorage.setItem("roll", a);
 			console.log(response);
 			swal({
 				  title: "Success",
