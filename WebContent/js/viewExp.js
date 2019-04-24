@@ -166,13 +166,21 @@ function getter(result)
 									'<div class="card-body">'+
 								    '<ul class="list-group list-group-flush">'+
 								    '<li class="list-group-item">'+
+							        '<h5 align="center" class="card-title">'+result[k]["title"]+'</h5>'+
+								    '</li>'+
+								    '<li class="list-group-item">'+
 							        '<h5 align="center" class="card-title">'+result[k]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[k]["type"]+'</h5>'
-								   +'</li><li  id="less" class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
+								   +'</li><li class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
 								   '<a id="more"  style="color:red	;" href="http://localhost:8085/PlacementPortalFrontEnd/experience.html?id='+result[k]["id"]+'"><b>Read More</b></a>'+
-								   '</li></ul></div>'+
-								   
-								    '</div></div></td></tr>';
-								
+								   '</li></ul></div></div></div></td></tr>';
+					
+
+							
+							
+							
+							
+							
+							
 						}
 							data2+="</tbody></table>";
 							console.log("data2");

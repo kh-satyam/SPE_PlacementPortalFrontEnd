@@ -26,5 +26,10 @@ function updateCV()
 	        var json_data = xhr.responseText;
 	        swal("CV updated");
 	        console.log("response : " + json_data);
-	    }};
+	    }
+	    else if(xhr.status === 400)
+	    	{
+	    		swal("error occured");
+	    	}
+	};
 }
