@@ -60,7 +60,7 @@ function sendInfo()
 				  text: "Information Updated Successfully!",
 				  icon: "success"
 				}, function() {
-		            window.location = "http://localhost:8080/PlacementPortalFrontEnd/editProfile.html";
+		            window.location = "http://localhost:8090/PlacementPortalFrontEnd/editProfile.html";
 		        });
         },
         failure : function(){
