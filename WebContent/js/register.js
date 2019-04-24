@@ -84,7 +84,7 @@ $(document).ready(function() {
 					  text: "Seller successfully registered!",
 					  icon: "success"
 					}, function() {
-			            window.location = "http://localhost:8085/PlacementPortalFrontEnd/login.html";
+			            window.location = "http://localhost:8080/PlacementPortalFrontEnd/login.html";
 			        });
 					
 			},

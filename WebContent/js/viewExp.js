@@ -37,7 +37,7 @@ $(document).ready(function () {
 							        '<h5 align="center" class="card-title">'+result[j]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[j]["type"]+'</h5>'+
 								    '</li>'+
 								    '<li class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
-								    '<a id="more"  style="color:red	;" href="http://localhost:8085/PlacementPortalFrontEnd/experience.html?id='+result[j]["id"]+'"><b>Read More</b></a>'+
+								    '<a id="more"  style="color:red	;" href="http://localhost:8080/PlacementPortalFrontEnd/experience.html?id='+result[j]["id"]+'"><b>Read More</b></a>'+
 								    '</li></ul></div></div></div></td></tr>';
 								
 								/*
@@ -171,7 +171,7 @@ function getter(result)
 								    '<li class="list-group-item">'+
 							        '<h5 align="center" class="card-title">'+result[k]["company"].name+'&nbsp&nbsp&nbsp&nbsp'+result[k]["type"]+'</h5>'
 								   +'</li><li class="list-group-item">'+dat+"&nbsp&nbsp&nbsp&nbsp&nbsp..."+
-								   '<a id="more"  style="color:red	;" href="http://localhost:8085/PlacementPortalFrontEnd/experience.html?id='+result[k]["id"]+'"><b>Read More</b></a>'+
+								   '<a id="more"  style="color:red	;" href="http://localhost:8080/PlacementPortalFrontEnd/experience.html?id='+result[k]["id"]+'"><b>Read More</b></a>'+
 								   '</li></ul></div></div></div></td></tr>';
 					
 

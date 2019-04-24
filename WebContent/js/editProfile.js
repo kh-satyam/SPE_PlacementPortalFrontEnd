@@ -55,10 +55,17 @@ function sendInfo()
         url : "http://localhost:8086/student/update",
         data : itemUpload,
         success : function(){
-        	console.log("success");
+        	swal({
+				  title: "Success",
+				  text: "Information Updated Successfully!",
+				  icon: "success"
+				}, function() {
+		            window.location = "http://localhost:8080/PlacementPortalFrontEnd/editProfile.html";
+		        });
         },
         failure : function(){
         	console.log("failure");
+        	swal("error occured");
         }});
 
 	

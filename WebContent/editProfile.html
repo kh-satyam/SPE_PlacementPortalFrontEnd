@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
         <title> Student Portal Dashboard</title>
 	    <link rel="stylesheet" href="css/comment.css">
@@ -18,7 +20,7 @@
             $(document).ready(function () {
                 var globalRoll = localStorage.getItem("roll");
                 if (globalRoll == null) { 
-                    window.location = 'http://localhost:8085/PlacementPortalFrontEnd/login.html';
+                    window.location = 'http://localhost:8080/PlacementPortalFrontEnd/login.html';
                 }
             });
         </script>

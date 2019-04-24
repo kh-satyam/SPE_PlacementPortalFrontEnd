@@ -20,7 +20,7 @@
             $(document).ready(function () {
                 var globalRoll = localStorage.getItem("roll");
                 if (globalRoll == null) {
-                    window.location = 'http://localhost:8085/PlacementPortalFrontEnd/login.html';
+                    window.location = 'http://localhost:8080/PlacementPortalFrontEnd/login.html';
                 }
             });
         </script>
@@ -61,8 +61,8 @@
         <div id="content">
         	<h2>Update CV</h2>
 	        <div class="myForum">
-
-
+				<br/><br/><br/>
+				<span id = "existCV"></span>
    				<form id="f2" enctype="multipart/form-data" name="form2" method="POST">
                     <input style="color:white" type="file" placeholder="CV" name="file" id="cv" required>
    				</form>

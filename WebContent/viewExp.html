@@ -21,7 +21,7 @@
             $(document).ready(function () {
                 var globalRoll = localStorage.getItem("roll");
                 if (globalRoll == null) { 
-                    window.location = 'http://localhost:8085/PlacementPortalFrontEnd/login.html';
+                    window.location = 'http://localhost:8080/PlacementPortalFrontEnd/login.html';
                 }
 
                 $(document).click(function() {
@@ -99,6 +99,9 @@ display: inline-block
 					  <option value="2016">2016</option>
 					  <option value="2017">2017</option>
 					  <option value="2018">2018</option>
+					  <option value="2019">2019</option>
+					  <option value="2020">2020</option>
+					  <option value="2021">2021</option>
 					</select>
 				</div>
 				<div id="offerFilter">
@@ -107,7 +110,7 @@ display: inline-block
 				      <option value="" disabled selected>Select your option</option>
 						<option value="Summer internship">Summer internship</option>
 						<option value="Internship">Internship</option>
-						<option value="Full Time Offer">Full Time Offer</option>
+						<option value="Full Time">Full Time</option>
 					</select>
 				</div>
 				<button onclick="submitFilters()" >Submit</button>		
